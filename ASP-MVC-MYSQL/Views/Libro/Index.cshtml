@@ -1,0 +1,27 @@
+﻿@using ASP_MVC_MYSQL.Data.DTO;
+@model List<LibroDTO>
+
+<h2>Lista de Libros</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Titulo</th>
+            <th>Autor</th>
+            <th>Paginas</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var model in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m=>model.Id)</td>
+                <td>@Html.DisplayFor(m=>model.Titulo)</td>
+                <td>@Html.DisplayFor(m=>model.Autor)</td>
+                <td>@Html.DisplayFor(m=>model.NumPag)</td>
+                
+            </tr>
+        }
+    </tbody>
+</table>

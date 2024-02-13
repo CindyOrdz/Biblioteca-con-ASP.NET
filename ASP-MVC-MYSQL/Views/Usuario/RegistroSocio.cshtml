@@ -1,0 +1,32 @@
+﻿@using ASP_MVC_MYSQL.Data.DTO;
+@model UsuarioDTO
+
+<div class="row mt-5">
+    <div class="col-sm-4 offset-sm-4">
+        <h2>Registro</h2>
+        <form asp-action="RegistroSocio" method="post">
+            <div class="form-group">
+                <label asp-for="Correo"></label>
+                <input asp-for="Correo" class="form-control" />
+                <span asp-validation-for="Correo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contraseña"></label>
+                <input asp-for="Contraseña" class="form-control" type="password" />
+                <span asp-validation-for="Contraseña" class="text-danger"></span>
+            </div>
+
+            <br /><button type="submit" class="btn btn-primary">Enviar</button>
+            <span asp-validation-summary="All" class="text-danger"></span>
+        </form>
+    </div>
+</div>
+
+@if (TempData["ErrorAgregar"] != null)
+{
+    <div class="alert alert-danger">@TempData["ErrorAgregar"]</div>
+}
+
+
+
+

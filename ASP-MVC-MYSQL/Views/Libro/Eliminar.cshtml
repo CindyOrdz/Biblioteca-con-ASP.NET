@@ -1,0 +1,19 @@
+﻿@model Libro
+
+<h2>Eliminar libro</h2>
+
+<form asp-action="Eliminar" method="post">
+    <div class="form-group">
+        <label asp-for="Id"></label>
+        <input asp-for="Id" class="form-control" />
+        <span asp-validation-for="Id" class="text-danger"></span>
+    </div>
+    
+    <br /><button type="submit" class="btn btn-primary">Eliminar</button>
+    <span asp-validation-summary="All" class="text-danger"></span>
+</form>
+
+@if (TempData["ErrorEliminar"] != null)
+{
+    <div class="alert alert-danger">@TempData["ErrorEliminar"]</div>
+}
